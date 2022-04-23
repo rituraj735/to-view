@@ -31,8 +31,11 @@ app.use(
 require("./controllers/passport");
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(passport.authenticate("session"));
 const authRouter = require("./routes/auth");
+const entryRouter = require("./routes/entry");
 app.use("/auth", authRouter);
+app.use("/entries", entryRouter);
 const PORT = process.env.PORT || 5000;
 // console.log(process.env.CONNECTION_URL);
 mongoose

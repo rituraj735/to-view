@@ -137,10 +137,10 @@ const markBlogAsViewed = async (req, res) => {
 };
 
 module.exports = {
-  getEntries,
-  addNewEntry,
-  deleteEntry,
-  updateEntry,
-  starEntry,
-  markEntryAsViewed,
+  getBlogs,
+  addBlog,
+  deleteBlog,
+  updateBlog,
+  starBlog,
+  markBlogAsViewed,
 };
