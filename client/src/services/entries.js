@@ -33,4 +33,4 @@ const view = async (id) => {
   return response.data;
 };
 
-export default { getAll, create, update, remove, star, view };
+export { getAll, create, update, remove, star, view };
