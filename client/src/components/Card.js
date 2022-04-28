@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useEntryContext } from "../context/entry/entryState";
 import {
   setTagFilter,
@@ -10,7 +10,7 @@ import {
 } from "../context/entry/entryReducer";
 import TimeAgo from "timeago-react";
 import DeleteDialog from "./DeleteDialog";
-import entryService from "..services/entries";
+import entryService from "../services/entries";
 import notify from "../utils/notifyDispatcher";
 
 import {
@@ -53,7 +53,7 @@ const Card = ({ entry }) => {
   } = entry;
 
   const [{ darkMode }, dispatch] = useEntryContext();
-  const history = useHistory();
+  const history = useNavigate();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   const classes = useCardStyles(isViewed, darkMode)();

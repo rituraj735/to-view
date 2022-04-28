@@ -11,4 +11,4 @@ const register = async (enteredData) => {
   return response.data;
 };
 
-export { login, register };
+export default { login, register };

@@ -13,4 +13,4 @@ const saveDarkMode = (boolean) =>
 
 const loadDarkMode = () => localStorage.getItem(storageKeyDarkMode);
 
-export { saveUser, loadUser, logoutUser, saveDarkMode, loadDarkMode };
+export default { saveUser, loadUser, logoutUser, saveDarkMode, loadDarkMode };

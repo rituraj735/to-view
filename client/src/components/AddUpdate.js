@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import AlertBox from "./AlertBox";
 import entryService from "../services/entries";
 import { useEntryContext } from "../context/entry/entryState";
@@ -48,7 +48,7 @@ const AddUpdate = () => {
   const [tagInput, setTagInput] = useState("");
   const [error, setError] = useState("");
   const [{ editValues, isLoading }, dispatch] = useEntryContext();
-  const history = useHistory();
+  const history = useNavigate();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   const classes = useFormStyles();

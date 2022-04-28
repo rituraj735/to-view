@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link as RouterLink, useHistory } from "react-router-dom";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 import AlertBox from "./AlertBox";
 import DemoCredsBox from "./DemoCredsBox";
 import authService from "../services/auth";
@@ -37,7 +37,7 @@ const LoginForm = () => {
   const [, authDispatch] = useAuthContext();
   const [{ isLoading }, entryDispatch] = useEntryContext();
   const classes = useRegisterLoginForm();
-  const history = useHistory();
+  const history = useNavigate();
   const { email, password } = credentials;
 
   const handleOnChange = (e) => {
