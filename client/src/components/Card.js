@@ -8,7 +8,7 @@ import {
   toggleStarEntry,
   toggleViewEntry,
 } from "../context/entry/entryReducer";
-import TimeAgo from "timeago-react";
+// import TimeAgo from "timeago-react";
 import DeleteDialog from "./DeleteDialog";
 import entryService from "../services/entries";
 import notify from "../utils/notifyDispatcher";
@@ -226,7 +226,7 @@ const Card = ({ entry }) => {
           <Tooltip title={createdAt}>
             <span>
               Added:{" "}
-              <TimeAgo datetime={createdAt} className={classes.timestamp} />
+              {/* <TimeAgo datetime={createdAt} className={classes.timestamp} /> */}
             </span>
           </Tooltip>
           {createdAt !== updatedAt ? (
@@ -234,10 +234,10 @@ const Card = ({ entry }) => {
               <span>
                 {" "}
                 | Last modified:{" "}
-                <TimeAgo
+                {/* <TimeAgo
                   datetime={updatedAt}
                   className={classes.timestamp}
-                />{" "}
+                />{" "} */}
               </span>
             </Tooltip>
           ) : null}

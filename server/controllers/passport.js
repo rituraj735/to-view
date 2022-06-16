@@ -31,14 +31,12 @@ passport.use(
       });
   })
 );
-passport.serializeUser((user, done) => {
-  process.nextTick(() => {
-    done(null, user.id);
-  });
+passport.serializeUser((user, cb) => {
+  cb(null, user.id);
 });
 
 passport.deserializeUser((id, done) => {
-  User.findById(id, (err, user) => {
-    done(err, user);
+  User.findById({ _id: id }, (err, user) => {
+    cb(err, user);
   });
 });
