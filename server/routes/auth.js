@@ -4,6 +4,7 @@ const passport = require("passport");
 var LocalStrategy = require("passport-local");
 var crypto = require("crypto");
 const { loginUser, registerUser } = require("../controllers/auth");
+require("../controllers/passportConfig")(passport);
 
 router.post("/login", (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {

@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt");
 const User = require("../models/user");
 const validator = require("validator");
 
+module.exports = function(passport){
 passport.use(
   new LocalStrategy({ usernameField: "email" }, (email, password, done) => {
     console.log("login is being processed");
@@ -31,6 +32,7 @@ passport.use(
       });
   })
 );
+};
 passport.serializeUser((user, cb) => {
   cb(null, user.id);
 });

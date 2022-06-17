@@ -28,7 +28,7 @@ app.use(
     saveUninitialized: true,
   })
 );
-require("./controllers/passport");
+require("./controllers/passportConfig");
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.authenticate("session"));
@@ -43,6 +43,7 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
+  .then(()=> console.log(`Successfully Monogo-ed`))
   .then(() =>
     app.listen(PORT, () => console.log(`Server running on port: ${PORT}`))
   )
